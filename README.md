@@ -74,47 +74,45 @@ private int newhighscore;
             DrawACar(12, _MyCarPosition, 2);
        }
   ```
-  
-  ### Create game board
-  
-  ```
-   private void Form1_Paint(object sender, PaintEventArgs e)
-        {
-            DrawGameBoard(e.Graphics);
-        }
-   ```
-   ### DrawGameBoard
-   ```
-    private void DrawGameBoard(Graphics g)
-        {
-           for(int i = 0; i< _row;i++)
+### Create game board
+```
+ private void Form1_Paint(object sender, PaintEventArgs e)
+      {
+          DrawGameBoard(e.Graphics);
+      }
+```
+### DrawGameBoard
+```
+private void DrawGameBoard(Graphics g)
+    {
+       for(int i = 0; i< _row;i++)
+       {
+           for(int j = 0; j <_col; j++)
            {
-               for(int j = 0; j <_col; j++)
+               // draw the grid
+               g.DrawRectangle(new Pen(Brushes.Brown), _startX+j*_elementSize,
+                   _startY+i*_elementSize,_elementSize,_elementSize);
+
+               // draw another car
+               if(_gameMatrix[i,j] == 1)
                {
-                   // draw the grid
-                   g.DrawRectangle(new Pen(Brushes.Brown), _startX+j*_elementSize,
-                       _startY+i*_elementSize,_elementSize,_elementSize);
-
-                   // draw another car
-                   if(_gameMatrix[i,j] == 1)
-                   {
-                       g.FillRectangle(Brushes.DarkCyan,_startX+j*_elementSize,
-                       _startY+i*_elementSize,_elementSize,_elementSize);
-                   }
-
-                   //draw my car
-                   if(_gameMatrix[i,j] == 2)
-                   {
-                       g.FillRectangle(Brushes.DeepSkyBlue,_startX+j*_elementSize,
-                       _startY+i*_elementSize,_elementSize,_elementSize);
-                   }
-
+                   g.FillRectangle(Brushes.DarkCyan,_startX+j*_elementSize,
+                   _startY+i*_elementSize,_elementSize,_elementSize);
                }
+
+               //draw my car
+               if(_gameMatrix[i,j] == 2)
+               {
+                   g.FillRectangle(Brushes.DeepSkyBlue,_startX+j*_elementSize,
+                   _startY+i*_elementSize,_elementSize,_elementSize);
+               }
+
            }
-        }
-   ```
+       }
+    }
+```
    
-   ###ResetGameBoard()
+### ResetGameBoard()
    ```
    private void ResetGameBoard()
         {
@@ -129,7 +127,7 @@ private int newhighscore;
         }
    ```
    
-   ### DrawACar(int x, int y,int value)
+### DrawACar(int x, int y,int value)
    ```
     private void DrawACar(int x, int y,int value)
         {
@@ -144,7 +142,7 @@ private int newhighscore;
         }
    ```
    
-   ### DrawAPoint(int x, int y, int value)
+### DrawAPoint(int x, int y, int value)
    ```
     private void DrawAPoint(int x, int y, int value)
         {
@@ -155,7 +153,7 @@ private int newhighscore;
         }
     ```
     
-    ### Button GO click event
+### Button GO click event
     ```
     private void button1_Click_1(object sender, EventArgs e)
         {
@@ -166,7 +164,7 @@ private int newhighscore;
             label1.Enabled = true;
         }
      ```
-    ### timeRacing_Tick function
+### timeRacing_Tick function
     ```
      private void timeRacing_Tick(object sender, EventArgs e)
         {
@@ -198,7 +196,7 @@ private int newhighscore;
             if (score > 120) timeRacing.Interval = 31;
          }
      ```
-     ### CheckGame()
+ ### CheckGame()
      ```
       private void CheckGame()
         {
@@ -212,7 +210,7 @@ private int newhighscore;
             }
         }
      ```
-    ### ProcessDialogKey(Keys keyData)
+### ProcessDialogKey(Keys keyData)
     ```
      protected override bool ProcessDialogKey(Keys keyData)
         {
