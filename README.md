@@ -153,7 +153,7 @@ private void DrawGameBoard(Graphics g)
         }
 ~~~~    
  
- ### Button GO click event
+### Button GO click event
 ```
 private void button1_Click_1(object sender, EventArgs e)
     {
