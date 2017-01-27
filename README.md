@@ -143,17 +143,17 @@ private void DrawGameBoard(Graphics g)
    ```
    
 ### DrawAPoint(int x, int y, int value)
-   ```
-    private void DrawAPoint(int x, int y, int value)
+~~~~
+       private void DrawAPoint(int x, int y, int value)
         {
             if (x < _row && x >= 0 && y < _col && y >= 0)
             {
                 _gameMatrix[x, y] = value;
             }
         }
-    ```
-    
-### Button GO click event
+~~~~    
+ 
+ ### Button GO click event
     ```
     private void button1_Click_1(object sender, EventArgs e)
         {
@@ -163,7 +163,8 @@ private void DrawGameBoard(Graphics g)
             timeRacing.Enabled = true;
             label1.Enabled = true;
         }
-     ```
+    ```
+    
 ### timeRacing_Tick function
     ```
      private void timeRacing_Tick(object sender, EventArgs e)
@@ -196,44 +197,46 @@ private void DrawGameBoard(Graphics g)
             if (score > 120) timeRacing.Interval = 31;
          }
      ```
+     
  ### CheckGame()
-     ```
-      private void CheckGame()
-        {
-            if(_carX +3 > 12 && _carY==_MyCarPosition)
-            {
-                newhighscore = score;
-                _car.Play();
-                timeRacing.Enabled = false;
-                score = 0;
-                MessageBox.Show("Game Over");
-            }
-        }
-     ```
+   ```
+    private void CheckGame()
+      {
+          if(_carX +3 > 12 && _carY==_MyCarPosition)
+          {
+              newhighscore = score;
+              _car.Play();
+              timeRacing.Enabled = false;
+              score = 0;
+              MessageBox.Show("Game Over");
+          }
+      }
+   ```
+   
 ### ProcessDialogKey(Keys keyData)
-    ```
-     protected override bool ProcessDialogKey(Keys keyData)
-        {
-            switch (keyData)
-            {
-                case Keys.Left:
-                case Keys.A: 
-                    if (_MyCarPosition == 3)
-                    {
-                        _jump.Play();
-                        _MyCarPosition = 0;
-                    }
-                    break;
-                case Keys.Right:
-                case Keys.D:
-                    if (_MyCarPosition == 0)
-                    {
-                        _jump.Play();
-                        _MyCarPosition = 3;
-                    }
-                return true;
-            }
-            return base.ProcessDialogKey(keyData);
-        }
-        ```
+  ```
+   protected override bool ProcessDialogKey(Keys keyData)
+      {
+          switch (keyData)
+          {
+              case Keys.Left:
+              case Keys.A: 
+                  if (_MyCarPosition == 3)
+                  {
+                      _jump.Play();
+                      _MyCarPosition = 0;
+                  }
+                  break;
+              case Keys.Right:
+              case Keys.D:
+                  if (_MyCarPosition == 0)
+                  {
+                      _jump.Play();
+                      _MyCarPosition = 3;
+                  }
+              return true;
+          }
+          return base.ProcessDialogKey(keyData);
+      }
+      ```
         
