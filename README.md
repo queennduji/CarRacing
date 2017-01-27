@@ -154,64 +154,64 @@ private void DrawGameBoard(Graphics g)
 ~~~~    
  
  ### Button GO click event
-    ```
-    private void button1_Click_1(object sender, EventArgs e)
-        {
-            timeRacing.Interval = 40;
-            _carY = _carX = 0;
-            _MyCarPosition = 0;
-            timeRacing.Enabled = true;
-            label1.Enabled = true;
-        }
-    ```
+```
+private void button1_Click_1(object sender, EventArgs e)
+    {
+        timeRacing.Interval = 40;
+        _carY = _carX = 0;
+        _MyCarPosition = 0;
+        timeRacing.Enabled = true;
+        label1.Enabled = true;
+    }
+```
     
 ### timeRacing_Tick function
-    ```
-     private void timeRacing_Tick(object sender, EventArgs e)
-        {
-            ResetGameBoard();
-            DrawACar(12, _MyCarPosition, 2);
-            DrawACar(_carX, _carY, 1);
-            Invalidate();
-            _carX++;
-            if (_carX == _row)
-            {
-                _ding.Play();
-                score++;
-                label1.Text = Convert.ToString(score);
-                _carX = 0;
-                var arr1 = new[] { 0, 3};
-                _carY = arr1[_random.Next(arr1.Length)];
-            }
-            CheckGame();
-            if (score > 10) timeRacing.Interval = 35;
-            if (score > 20) timeRacing.Interval = 34;
-            if (score > 30) timeRacing.Interval = 33;
-            if (score > 50) timeRacing.Interval = 32;
-            if (score > 60) timeRacing.Interval = 31;
-            if (score > 70) timeRacing.Interval = 32;
-            if (score > 80) timeRacing.Interval = 31;
-            if (score > 90) timeRacing.Interval = 32;
-            if (score > 100) timeRacing.Interval = 31;
-            if (score > 110) timeRacing.Interval = 32;
-            if (score > 120) timeRacing.Interval = 31;
-         }
-     ```
+```
+private void timeRacing_Tick(object sender, EventArgs e)
+{
+    ResetGameBoard();
+    DrawACar(12, _MyCarPosition, 2);
+    DrawACar(_carX, _carY, 1);
+    Invalidate();
+    _carX++;
+    if (_carX == _row)
+    {
+        _ding.Play();
+        score++;
+        label1.Text = Convert.ToString(score);
+        _carX = 0;
+        var arr1 = new[] { 0, 3};
+        _carY = arr1[_random.Next(arr1.Length)];
+    }
+    CheckGame();
+    if (score > 10) timeRacing.Interval = 35;
+    if (score > 20) timeRacing.Interval = 34;
+    if (score > 30) timeRacing.Interval = 33;
+    if (score > 50) timeRacing.Interval = 32;
+    if (score > 60) timeRacing.Interval = 31;
+    if (score > 70) timeRacing.Interval = 32;
+    if (score > 80) timeRacing.Interval = 31;
+    if (score > 90) timeRacing.Interval = 32;
+    if (score > 100) timeRacing.Interval = 31;
+    if (score > 110) timeRacing.Interval = 32;
+    if (score > 120) timeRacing.Interval = 31;
+ }
+```
      
- ### CheckGame()
-   ```
-    private void CheckGame()
+### CheckGame()
+```
+private void CheckGame()
+  {
+      if(_carX +3 > 12 && _carY==_MyCarPosition)
       {
-          if(_carX +3 > 12 && _carY==_MyCarPosition)
-          {
-              newhighscore = score;
-              _car.Play();
-              timeRacing.Enabled = false;
-              score = 0;
-              MessageBox.Show("Game Over");
-          }
+          newhighscore = score;
+          _car.Play();
+          timeRacing.Enabled = false;
+          score = 0;
+          MessageBox.Show("Game Over");
       }
-   ```
+  }
+```
    
 ### ProcessDialogKey(Keys keyData)
   ```
