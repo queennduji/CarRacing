@@ -2,7 +2,7 @@
 This is a project of creating a racing car game. The program is a Winform application which written by C# using Visual Studio IDE
 
 ### Game description
-_In this game, players need to use the <kbd>A</kbd> and  <kbd>D</kbd> button on keyboard to move the car avoiding be crashed with other cars. For each time of successfully avoiding crashing with another car, players get one point. The game is over when crashing happen. Players can see their points on the game screen._ 
+_In this game, players need to use the <kbd>A</kbd> and  <kbd>D</kbd> button on keyboard to move the car avoiding be crashed with other cars. For each time of successfully avoiding crashing with another car, players get one point. The game is over when crashing happen. Players can see their points on the game screen. This is an endless runner-style game._ 
 
 ![alt text](https://cloud.githubusercontent.com/assets/11772613/22362808/0e5eda94-e498-11e6-936f-26c61af8ca6b.png "Car Racing Screenshot")
 
